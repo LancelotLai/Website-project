@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Patrick+Hand');
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  color: white;
+  font-family: 'Patrick Hand', cursive;
+}
+
+a {
+  color: white;
+
+}
+
+.header{
+  background-color:rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 120px;
+  top: 0;
+  position: fixed;
+
+}
+
+h1,h2{
+font-family: 'Indie Flower', cursive;
+}
+
+.header h1{
+  font-size: 36px;
+}
+
+.header h2{
+  font-size: 18px;
+}
+
+.main{
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 130px;
+  left: 30%;
+  width: 800px;
+  height: 600px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#menu{
+  float: right;
+  top: 30px;
+  right: 0;
+  position: fixed;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:link, li a:visited{
+  text-transform: uppercase;
+}
+
+
+li a:hover, li a:active{
+  text-decoration: underline;
+  color: rgba(200, 200, 200, 0.5);
+}
+
+.explain{
+  top: 160px;
+  right: 0px;
+  float: right;
+  position: fixed;
+}
+
+.explain img{
+  height: 222px;
+  width: 285px;
+}
+
+.explain figcaption{
+background-color: white;
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  bottom: -30px;
+  padding: 15px;
+  z-index: 2;
+  width: 255px;
+  text-align: center;
+}
+
+.icon{
+  height: 30px;
+  weight: 30px;
+}
+
+#index{
+
+  padding: 10px;
+}
+
+.gmap{
+  top: 300px;
+  left: 10px;
+  float: left;
+  position: fixed;
+  margin: 0px;
+}
+
+.gmap figcaption{
+ background-color: rgba(0,0,0);
+ color: white;
+ font-size: 18px;
+ position: absolute;
+ top :0;
+ left: 0;
+ right: 0;
+ padding: 15px;
+ z-index: 2;
+}
+
+#myMap{
+width: 370px;
+height: 300px;
+color: black;
+}
+
+span{
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+#fullscreenbutton{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  float: right;
+  height: 30px;
+  width: 30px;
+}
+
+video{
+  position: absolute;
+  width: 560px;
+  height: 315px;
+  bottom: 30px;
+  margin: 0px;
+  left: 115px;
+}
+
+.haro{
+  height: 50px;
+  width: 90px;
+  position: relative;
+  top: 130px;
+  right: 0px;
+  border-radius: 50%;
+  animation: moveIt 10s linear infinite alternate;
+}
+
+.gym-svpc{
+  display: none;
+}
+
+@keyframes moveIt {
+	0%   { top: 130px; left: 0px; }
+  25%  { top: 240px; left: 600px;}
+	50%  { top: 360px; left: 1400px; }
+  100% { top: 650px; left: 0px; }

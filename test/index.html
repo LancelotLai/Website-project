@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lancelot's Childhood Memory</title>
+<link rel="stylesheet" href="style.css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyD2Sf8VccLrGj_FqgQ0A_X9m6ntuxe9sZw"></script>
+<script src="jquery.ui.map.full.min.js"></script>
+<script>
+$(document).ready(function() { // do not delete this line
+
+
+  $("body").css({'background-image':"url(image/destiny.jpg)"});
+  $("#friendship, #lover, #wrath, #homecountry, #kira, #asuran, #sin, #stella, #kagari").hide();
+
+  $("span:contains(Kira)").hover(function(){
+        $("#kira").show();
+        }, function(){
+        $("#kira").hide();
+    });
+
+  $("span:contains(Arthun)").hover(function(){
+        $("#asuran").show();
+        }, function(){
+        $("#asuran").hide();
+    });
+
+  $("span:contains(Shinn)").hover(function(){
+        $("#sin").show();
+        }, function(){
+        $("#sin").hide();
+    });
+
+  $("span:contains(Stella)").hover(function(){
+        $("#stella").show();
+        }, function(){
+        $("#stella").hide();
+    });
+
+  $("span:contains(Cagali)").hover(function(){
+        $("#kagari").show();
+        }, function(){
+        $("#kagari").hide();
+    });
+
+  $("#myMap").gmap({
+    "center": "26.646477, 91.025000",
+    "zoom": 0.5,
+  });
+
+  $('#myMap').gmap('addMarker', {'position': '36.824050, 24.792568'})
+    .click(function(){$('#myMap').gmap('openInfoWindow',
+    { 'content': '<p>Kira defeated Arthun in this place<br>(Near Crete, Greek)</p>'}, this);});
+
+  $('#myMap').gmap('addMarker', {'position':"52.519410, 13.404548"})
+    .click(function(){$('#myMap').gmap('openInfoWindow',
+    { 'content': '<p>Stella dead in this place<br>(Berlin, Germany)</p>'}, this);});
+
+    $('#myMap').gmap('addMarker', {'position':"53.806623, 7.549818"})
+      .click(function(){$('#myMap').gmap('openInfoWindow',
+      { 'content': '<p>Shinn avenged by defeated Kira<br>(North Sea)</p>'}, this);});
+
+      $('#myMap').gmap('addMarker', {'position':"-6.832763, 147.070592"})
+        .click(function(){$('#myMap').gmap('openInfoWindow',
+        { 'content': '<p>Orb</p>'}, this);});
+
+
+  $("#fullscreenbutton").click(function(){
+    $(".header, .main, .gmap, .haro").toggle();
+  });
+
+  $("#1").click(function() {
+    $("#friendship, #lover, #wrath, #homecountry").hide();
+    $("body").css({'background-image':"url(image/destiny.jpg)"})
+    $("#index").fadeIn(800);
+  //  $("video").trigger("pause");
+  });
+
+/*destiny.jpg is from:https://wall.alphacoders.com/big.php?i=760232*/
+
+  $(".2").click(function(){
+    $("body").css({"background-image":"url(image/kira&arthun.jpg)"});
+    $("#index, #lover, #wrath, #homecountry").hide();
+    $("#friendship").fadeIn(800);
+    //$("video").trigger("pause");
+    $('#ep28').on('timeupdate', function() {
+      var playTime = Math.round( $(this).get(0).currentTime );
+      if(playTime >= 1135)
+      {$('body').css({"background-image":"url(image/freedom.jpg)"})};
+    });
+  });
+
+  /*kira&arthun.jpg is from: https://wall.alphacoders.com/big.php?i=756821
+  freedom.jpg is from: https://wall.alphacoders.com/big.php?i=123030*/
+
+  $(".3").click(function(){
+    $("body").css({"background-image":"url(image/stella.jpg)"});
+    $("#index, #friendship, #wrath, #homecountry").hide();
+    $("#lover").fadeIn(800);
+    //$("video").trigger("pause");
+    $('#ep33').on('timeupdate', function() {
+      var playTime = Math.round( $(this).get(0).currentTime );
+      if(playTime >= 180)
+      {$('body').css({"background-image":"url(image/stella2.jpg)"})};
+    });
+  });
+
+/*stella2.jpg is from:https://wall.alphacoders.com/big.php?i=760102
+stella.jpg is from:https://wall.alphacoders.com/big.php?i=164718*/
+
+  $(".4").click(function(){
+    $("body").css({"background-image":"url(image/impulse1.jpg)"});
+    $("#index, #friendship, #lover, #homecountry").hide();
+    $("#wrath").fadeIn(800);
+    //$("video").trigger("pause");
+    $('#ep34').on('timeupdate', function() {
+      var playTime = Math.round( $(this).get(0).currentTime );
+      if(playTime >= 1283)
+      {$('body').css({"background-image":"url(image/impulse.jpg)"})};
+    });
+  });
+/*impulse1.jpg is from: https://wall.alphacoders.com/big.php?i=164718
+impulse.jpg is from: https://wall.alphacoders.com/big.php?i=760238*/
+
+
+  $(".5").click(function(){
+    $("body").css({"background-image":"url(image/akashuki.jpg)"});
+    $("#index, #friendship, #lover, #wrath").hide();
+    $("#homecountry").fadeIn(800);
+    //$("video").trigger("pause");
+    $('#ep40').on('timeupdate', function() {
+      var playTime = Math.round( $(this).get(0).currentTime );
+      if(playTime >= 1093)
+      {$('body').css({"background-image":"url(image/kagali.jpg)"})};
+    });
+
+  });
+
+/*kagali.jpg is from:https://wall.alphacoders.com/big.php?i=760211
+akashuki.jpg is from:https://wall.alphacoders.com/big.php?i=760149*/
+
+  $(".icon").on({
+    "mouseenter" : function() {
+      this.src = 'image/iconhover.png';
+    },
+    "mouseleave" : function() {
+      this.src = 'image/icon.png';
+    }
+  });
+
+
+});
+ // do not delete this line
+</script>
+</head>
+<body>
+
+<img class="haro" src="image/haro.png" alt="haro">
+<!-- haro.png is from https://rumorscity.com/line-sticker/mobile-suit-gundam-seed/ -->
+
+<div class="header">
+  <h1>Welcome to Lancelot's Childhood Memory</h1>
+  <h2>Gundam Seed Destiny is the treasure in my childhood.</h2>
+
+    <ul id="menu">
+      <li id="1"><a href="#index"><img class="icon" src="image/icon.png" alt="icon"></a></li>
+      <li class="2"><a href="#friendship">Friendship</a></li>
+      <li class="3"><a href="#lover">Love</a></li>
+      <li class="4"><a href="#wrath">Wrath</a></li>
+      <li class="5"><a href="#homecountry">Homeland</a></li>
+    </ul>
+
+</div>
+
+<!-- icon.png is from https://www.flaticon.com/free-icon/home-page_2144
+iconhover.png is from https://www.flaticon.com/free-icon/home_1034137#term=home&page=1&position=43 -->
+
+<div class="main">
+
+<div id="index">
+<img src="image/logo.png" alt="logo">
+<!-- logo.png is from http://en.gundam.info/series/seeddestiny/ -->
+  <p>Gundam Seed Destiny (GSD) is my favourite Gundam Anime when I was a child.
+    <br>Compare with all others Gundam anime, it is the most sentimetal one.
+      <br><a href="#friendship" class="2">Friendship</a>, <a href="#lover" class="3">Love</a>, <a href="#wrath" class="4">Wrath</a>, <a href="#homecountry" class="5">Homeland</a>.
+      <br> All things are also influenced by war and will be described in this website.
+  </p>
+
+  <p>
+    <br> Although <span>Kira</span> & <span>Arthun</span> are friends,<br> because of war, they need to fight with each other.
+  </p>
+  <p>
+    <br> Although <span>Shinn</span> & <span>Stella</span> love each other,<br> because of war, they cannot have a good ending.
+  </p>
+  <p>
+      <br> Although <span>Kira</span> was just wanted to stop the murder,<br> because he killed <span>Stella</span> in the war, <span>Shinn</span> takes revenge on him.
+  </p>
+  <p>
+      <br> Although <span>Cagali</span> is weak,<br> even it is war, she also want to protect her country - Orb.
+  </p>
+</div>
+
+
+  <div id="friendship">
+
+    <h1>Friends</h1>
+
+    <p>When I was child, I throught peoples' friends are also should be their comrades.
+      <br>But when I was watching Gundam Seed Destiny, it has provided me a new perseption.
+      <br>Our friends may not same as our comrades. But if my friend is my enemey, it is very cruel for ourseleves.</p>
+
+      <p> <span>Kira</span> and <span>Arthun</span> are friends. Different point of view on the war caused them fight with each other, even both are not wrong.
+        <br> It is a cruel act to fight with friends in the battlefield. </p>
+
+  <video controls id="ep28">
+    <source src="video/Ep28.mp4">
+      <!-- ep28.mp4 is from https://www.youtube.com/watch?v=Bc6mimVETuw&list=PLJV1h9xQ7Hx83FrF1OQrq5tFiRXeA1wAT&index=28 -->
+    </video>
+
+    </div>
+
+  <div id="lover">
+
+    <h1>Lovers</h1>
+
+    <p>Ofcourse, when I was a kid, I didn't really understand what is love.
+      <br> The person you want to play with? Maybe this was the anwser whild I was a child.
+      <br> However, one thing I certainly remember which is Gundam Seed Destiny changed my love peception.
+      <br> Since I was fantasizing if the lovers love each others, they must have a good ending when I was child. </p>
+
+    <p><span>Stella</span> and <span>Shinn</span>. Although they love each other, they could not have a good ending.
+      <br> <span>Stella</span> is dead. Although <span>Shinn</span> still alive, the sorrowful fact leads him plan to revenge.</p>
+
+    <video controls id="ep33">
+      <source src="video/Ep33.mp4">
+        <!-- ep33.mp4 is from https://www.youtube.com/watch?v=OcqZf7thjSk&list=PLJV1h9xQ7Hx83FrF1OQrq5tFiRXeA1wAT&index=33 -->
+    </video>
+
+  </div>
+
+  <div id="wrath">
+
+    <h1>Revenge</h1>
+
+    <p> <span>Shinn</span> is extremly angery because of <span>Stella</span> death. Fortunately, there is a chance for him to revenge.
+      <br>As <span>Kira</span> won't shoot mobile suit's cockpit, and Impulse Gundam can change the body parts while it is battling.
+      <br>Finally <span>Shinn</span> defeated <span>Kira</span>.
+      <br> When I was child, revenge this word is just for mischief. <br>But <span>Shinn</span> let me felt that revenge should be a behavior which is more important and serious.
+      <br> I was really throught it is very cool when I was child. </p>
+
+    <video controls id="ep34">
+      <source src="video/Ep34.mp4">
+        <!-- ep34.mp4 is from https://www.youtube.com/watch?v=on_YHinaCzk&index=34&list=PLJV1h9xQ7Hx83FrF1OQrq5tFiRXeA1wAT -->
+      </video>
+  </div>
+
+  <div id="homecountry">
+
+    <h1>Homeland</h1>
+
+      <p>Which place should be counted as home? The house you live in? The district? Or the state?
+      <br><span>Cagali</span> has demonstrated the answer. She loves her state - Orb.
+      <br>She want to protect her home country, even she is very weak, even her authority has lost.
+      <br> I was impressed by <span>Cagali</span>'s passion, speech, spirit and action when I was child,
+      <br> especially while she takes akashuki to protect Orb.
+
+    <video controls id="ep40">
+      <source src="video/Ep40.mp4">
+        <!-- ep40.mp4 is from https://www.youtube.com/watch?v=VSiOnTEzD6c&list=PLJV1h9xQ7Hx83FrF1OQrq5tFiRXeA1wAT&index=40 -->
+    </video>
+
+  </div>
+</div>
+
+<figure class="gmap">
+  <figcaption>Approximate locations in reality</figcaption>
+  <div id="myMap"></div>
+</figure>
+
+<div class="explain">
+
+<figure id="kira">
+<img src="image/kira.jpg">
+<figcaption> Kira - Arthun's best friend<br>Freedom Gundam's pilot</figcaption>
+</figure>
+
+<figure id="asuran">
+  <img src="image/asuran.jpg">
+  <figcaption> Arthun - Kira best friend<br>Savior Gundam's pilot</figcaption>
+</figure>
+
+<figure id="sin">
+  <img src="image/sin.jpg">
+  <figcaption> Shinn - Stella's lover<br>Impulse Gundam & Destiny Gundam's pilot</figcaption>
+</figure>
+  <figure id="stella">
+    <img src="image/stella1.jpg">
+    <figcaption>Stella - Shinn's lover<br>Destroy Gundam pilot<br>Dead in Berlin</figcaption>
+  </figure>
+<figure id="kagari">
+    <img src="image/kagari.jpg">
+  <figcaption>Cagali - Arthun's lover<br>Strike Rouge Gundam & Akatsuki Gundam's pilot<br>Leader of Orb</figcaption>
+  </figure>
+</div>
+<!-- kira.jpg, asuran.jpg, sin.jpg, stella.jpg and kagari.jpg are from:http://www.gundam-seed-d.net/03cool/character/index.html -->
+
+<img id="fullscreenbutton" src="image/fullscreenbutton.png" alt="extend">
+<!-- fullscreenbutton.png is from https://www.flaticon.com/free-icon/expand_274974 -->
+
+</body>
+</html>
